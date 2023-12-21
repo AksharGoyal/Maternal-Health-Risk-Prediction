@@ -61,7 +61,7 @@ dv = DictVectorizer(sparse=False)
 le = LabelEncoder()
 y = le.fit_transform(target)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.6, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, target, train_size=0.6, random_state=42)
 
 X_train_dv = dv.fit_transform(X_train.to_dict(orient='records'))
 X_test_dv = dv.transform(X_test.to_dict(orient='records'))
